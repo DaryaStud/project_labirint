@@ -53,8 +53,8 @@ Labirint::Labirint(QWidget *parent)
     QGridLayout *lab1Layout = new QGridLayout;
     QGridLayout *lab2Layout = new QGridLayout;
 
-    Draw(Lab1, lab1, lab1Layout, 1);
-    Draw(Lab2, lab2, lab2Layout, 1);
+    Draw(Lab1, lab1, lab1Layout, 0);
+    Draw(Lab2, lab2, lab2Layout, 0);
 
     //lab2[2][2]->setPixmap(Wall);
 
