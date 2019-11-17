@@ -124,7 +124,7 @@ void Labirint::Draw(Lab *Labo, QLabel *lab[41][41], QGridLayout *labLayout, int 
     for (int i = 0; i<size; i++)
         for (int j = 0; j<size; j++){
             lab[i][j] = new QLabel;
-            if (i == 0 || i == size-1 || j == 0 || j == size-1 || !(Labo->m_lab[i/2][j/2]->get_right()))
+            if (i == 0 || i == size-1 || j == 0 || j == size-1)
                 lab[i][j]->setPixmap(Wall);
             else
                 lab[i][j]->setPixmap(Empty);
