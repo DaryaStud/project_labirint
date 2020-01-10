@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <windows.h>
 #include <queue>
+#include <QQueue>
 
 class QLabel;
 class QPixmap;
@@ -17,14 +18,20 @@ public:
     int m_res = 0;
     dot*** m_lab;
     int** m_used;
+    QQueue <int*> draw_queue;
 public:
     Lab(int n, int m) ;
     virtual ~Lab();
     void gen1(int i, int j);
     void gen3();
-    bool find1(QLabel* lab[][100], int starti, int startj, int finishi, int finishj, int res = 0);
-    bool find2(QLabel* lab[][100], int starti, int startj, int finishi, int finishj);
-    bool find3(QLabel* lab[][100], int starti, int startj, int finishi, int finishj, int res = 0);
+    void mySleep();
+    void push_to_draw_queue(int i, int j, int k);
+    bool find1(int starti, int startj,
+               int finishi, int finishj, int res = 0);
+    bool find2(int starti, int startj,
+               int finishi, int finishj);
+    bool find3(int starti, int startj,
+               int finishi, int finishj);
     void operator= (Lab* Lab);
 };
 
